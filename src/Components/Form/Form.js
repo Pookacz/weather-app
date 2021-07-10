@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { connect } from "react-redux";
-import { addResponse } from '../Actions/index';
+import { addResponse } from '../../Actions/index';
 
 class Form extends React.Component {
   state = {
@@ -24,7 +24,6 @@ class Form extends React.Component {
             q: `${this.state.city}`,
         }
     }).then((res) => {
-        console.log(res.data)
         this.props.addResponse(res.data)
     }).catch((error)=>{
         console.log(error)

@@ -2,9 +2,29 @@ import React from 'react';
 import { Provider } from "react-redux";
 import CurrentWeather from '../Components/CurrentWeather/CurrentWeather';
 import Store from "../Store/index";
-import Form from '../Components/Form/Form'
+import Form from '../Components/Form/Form';
+import Button from '../Components/Button/Button';
+
 
 class Root extends React.Component{
+    state = {
+        current: true,
+        forecast: false,
+    }
+
+    openCurrent = () =>{
+        this.setState({
+            current: true,
+            forecast: false,
+        });
+    };
+
+    openForecast = () =>{
+        this.setState({
+            current: false,
+            forecast: true,
+        });
+    };
 
     render(){
 
@@ -12,7 +32,9 @@ class Root extends React.Component{
             <Provider store={Store}>
                 <div>
                     <Form />
-                    <CurrentWeather />
+                    <Button title='Current' onClick={this.openCurrent}/>
+                    <Button title='Forecast' onClick={this.openForecast}/>
+                    {this.state.current && <CurrentWeather />}
                 </div>
             </Provider>
         )

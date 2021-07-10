@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import { connect } from "react-redux";
 import { addResponse } from '../../Actions/index';
+import Button from '../Button/Button';
 
 class Form extends React.Component {
   state = {
@@ -39,7 +40,7 @@ class Form extends React.Component {
     return( 
     <div>
         <input name='city' onChange={this.handleChange}/>
-        <button onClick={this.searchWeather}>Search</button>
+        <Button onClick={this.searchWeather} title='Search'/>
     </div>
     );
   }

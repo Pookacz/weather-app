@@ -28,11 +28,11 @@ class Form extends React.Component {
       })
       .then((res) => {
         this.props.addResponse(res.data);
-        window.scroll(0, window.innerHeight)
       })
       .catch((error) => {
         console.log(error);
       });
+      window.scroll(0, window.innerHeight)
   };
 
   render() {

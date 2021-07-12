@@ -8,21 +8,29 @@ const ForecastWeather = (props) =>{
         <>
             {props.response &&
                 <div className={styles.wrapper}>
-                    <h1>{props.response.location.name}</h1>
+                    <h1 className={styles.title}>{props.response.location.name}</h1>
                     {props.response.forecast.forecastday.map((item, index) => (
                         <div key={index}>
-                            <p>{item.date}</p>
-                            <p>max temp {item.day.maxtemp_c} °C</p>
-                            <p>min temp {item.day.mintemp_c} °C</p>
-                            <p>avg temp {item.day.avgtemp_c} °C</p>
-                            <img src={item.day.condition.icon} alt={item.day.condition.text}/>
-                            {item.hour.map((item, index)=>(
-                                <div key={index} className={styles.hours}>
-                                    <p>{item.time.split(' ')[1]}</p>
-                                    <img src={item.condition.icon} alt={item.condition.text}/>
-                                    <p>{item.temp_c} °C</p>
-                                </div>    
-                            ))}
+                            <div className={styles.secondWrapper}>
+                                <div className={styles.thirdWrapper}>
+                                    <p className={styles.thirdWrapper_p}>{item.date}</p>
+                                    <img className={styles.thirdWrapper_img} src={item.day.condition.icon} alt={item.day.condition.text}/>
+                                </div>
+                                <div className={styles.fourthWrapper}>
+                                    <p>Max temperature: {item.day.maxtemp_c} °C</p>
+                                    <p>Min temperature: {item.day.mintemp_c} °C</p>
+                                    <p>Avg temperature: {item.day.avgtemp_c} °C</p>
+                                </div>
+                            </div>
+                            <div className={styles.fifthWrapper}>
+                                {item.hour.map((item, index)=>(
+                                    <div key={index} className={styles.sixthWrapper}>
+                                        <img src={item.condition.icon} alt={item.condition.text}/>
+                                        <p>{item.time.split(' ')[1]}</p>
+                                        <p>{item.temp_c} °C</p>
+                                    </div>    
+                                ))}
+                            </div>
                         </div>
 
                     ))}

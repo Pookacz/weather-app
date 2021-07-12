@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { addResponse } from "../../Actions/index";
+import { addResponse, addError } from "../../Actions/index";
 import Button from "../Button/Button";
 import styles from "./Form.module.scss";
 
@@ -31,6 +31,7 @@ class Form extends React.Component {
       })
       .catch((error) => {
         console.log(error);
+        this.props.addError(true);
       });
       window.scroll(0, window.innerHeight)
   };
@@ -57,6 +58,7 @@ class Form extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addResponse: (response) => dispatch(addResponse(response)),
+    addError: (error) => dispatch(addError(error)),
   };
 };
 

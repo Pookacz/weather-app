@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.image{
+    height: 12.5vh;
+}
+
+.title{
+    margin: 0;
+    font-size: 700;
+    font-weight: 700;
+    font-size: 10vh;
+}
+
+.temp{
+    font-weight: 700;
+    font-size: 20vh;
+    margin: 0;
+}

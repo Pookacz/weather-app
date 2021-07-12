@@ -7,7 +7,7 @@ const CurrentWeather = (props) => {
       {props.response && (
         <div>
           <h1>{props.response.location.name}</h1>
-          <p>{props.response.current.temp_c}</p>
+          <p>{props.response.current.temp_c} °C</p>
           <img
             src={props.response.current.condition.icon}
             alt={props.response.current.condition.text}

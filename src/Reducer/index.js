@@ -1,5 +1,6 @@
 const initialState = {
     response: '',
+    responseStatus: false,
     error: false,
 }
 
@@ -14,6 +15,11 @@ const rootReducer = (state = initialState, action) => {
             return{
                 ...state,
                 error: action.payload,
+            }
+        case 'ADD_RESPONSE_STATUS':
+            return{
+                ...state,
+                responseStatus: action.payload,
             }
         default: 
             return state;

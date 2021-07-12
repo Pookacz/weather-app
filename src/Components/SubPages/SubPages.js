@@ -4,7 +4,7 @@ import ForecastWeather from "../ForecastWeather/ForecastWeather";
 import Button from "../Button/Button";
 import styles from "./SubPages.module.scss";
 import { connect } from "react-redux";
-import { addError } from "../../Actions/index";
+import { addError, addResponse, addResponseStatus } from "../../Actions/index";
 
 class SubPages extends React.Component {
   state = {
@@ -27,14 +27,19 @@ class SubPages extends React.Component {
   };
 
   tryAgain = () => {
-    this.props.addError(false);
+    this.props.addResponse('');
     window.scroll(0, 0);
+
+    setTimeout(()=>{  
+      this.props.addError(false);
+      this.props.addResponseStatus(false);
+    }, 400)
   };
 
   render() {
     return (
       <>
-        {!this.props.error && (
+        {this.props.responseStatus && !this.props.error && (
           <div className={styles.wrapper}>
             <div className={styles.buttonWrapper}>
               <div className={styles.side}></div>
@@ -73,13 +78,15 @@ class SubPages extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  const { error } = state;
-  return { error };
+  const { error, responseStatus } = state;
+  return { error, responseStatus };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addError: (error) => dispatch(addError(error)),
+    addResponse: (response) => dispatch(addResponse(response)),
+    addResponseStatus: (status) => dispatch(addResponseStatus(status)),
   };
 };
 

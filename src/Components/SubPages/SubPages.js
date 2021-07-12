@@ -27,10 +27,13 @@ class SubPages extends React.Component {
   };
 
   tryAgain = () => {
-    this.props.addError(false);
     this.props.addResponse('');
     window.scroll(0, 0);
-    this.props.addResponseStatus(false);
+
+    setTimeout(()=>{  
+      this.props.addError(false);
+      this.props.addResponseStatus(false);
+    }, 400)
   };
 
   render() {

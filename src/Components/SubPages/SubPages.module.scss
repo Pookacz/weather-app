@@ -1,0 +1,47 @@
+.wrapper{
+
+}
+
+.buttonWrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+.side{
+    border-bottom: 2px solid #7f8c8d;
+    width: 30vw;
+}
+.pageOn{
+    padding: 20px;
+    width: 20vw;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+
+    background-color: #fff;
+    border: 2px solid #7f8c8d;
+    border-bottom: 0;
+}
+
+.pageOff{
+    padding: 20px;
+    width: 20vw;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+
+    background-color: #d8dadb;
+    border: 0;
+    border-bottom: 2px solid #7f8c8d;
+
+    
+
+}
+
+.subPageWrapper{
+
+}

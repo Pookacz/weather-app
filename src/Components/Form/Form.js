@@ -15,25 +15,25 @@ class Form extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
-  
+
   searchWeather = () => {
     axios
-    .request({
-      method: "GET",
-      url: "http://api.weatherapi.com/v1/forecast.json",
-      params: {
-        key: "a2b3e66aad24455e826231810210707",
-        q: `${this.state.city}`,
-      },
-    })
-    .then((res) => {
-      this.props.addError(false)
-      this.props.addResponse(res.data);
-    })
-    .catch((error) => {
-      console.log(error);
-      this.props.addError(true);
-    });
+      .request({
+        method: "GET",
+        url: "http://api.weatherapi.com/v1/forecast.json",
+        params: {
+          key: "a2b3e66aad24455e826231810210707",
+          q: `${this.state.city}`,
+        },
+      })
+      .then((res) => {
+        this.props.addError(false);
+        this.props.addResponse(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        this.props.addError(true);
+      });
     this.props.addResponseStatus(true);
   };
 
@@ -46,7 +46,7 @@ class Form extends React.Component {
             className={styles.input}
             name="city"
             onChange={this.handleChange}
-            autoComplete='off'
+            autoComplete="off"
           />
           <Button
             className={styles.button}

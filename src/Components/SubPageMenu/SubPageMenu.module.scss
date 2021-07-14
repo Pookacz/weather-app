@@ -6,12 +6,12 @@
     display: flex;
     justify-content: center;
     height: 10vh;
-    
 }
 .side{
     border-bottom: 2px solid #7f8c8d;
     width: 30vw;
 }
+
 .pageOn{
     padding: 20px;
     width: 20vw;
@@ -35,6 +35,7 @@
     border: 0;
     border-bottom: 2px solid #7f8c8d;
 }
+
 .pageOff:hover{
     font-weight: 700;
 }

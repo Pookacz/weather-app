@@ -15,25 +15,26 @@ class Form extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
-  
+
   searchWeather = () => {
+    this.props.addError(false);
+    this.props.addResponseStatus(false);
     axios
-    .request({
-      method: "GET",
-      url: "http://api.weatherapi.com/v1/forecast.json",
-      params: {
-        key: "a2b3e66aad24455e826231810210707",
-        q: `${this.state.city}`,
-      },
-    })
-    .then((res) => {
-      this.props.addError(false)
-      this.props.addResponse(res.data);
-    })
-    .catch((error) => {
-      console.log(error);
-      this.props.addError(true);
-    });
+      .request({
+        method: "GET",
+        url: "http://api.weatherapi.com/v1/forecast.json",
+        params: {
+          key: "a2b3e66aad24455e826231810210707",
+          q: `${this.state.city}`,
+        },
+      })
+      .then((res) => {
+        this.props.addResponse(res.data);
+      })
+      .catch((error) => {
+        this.props.addError(true);
+        console.log(error);
+      });
     this.props.addResponseStatus(true);
   };
 

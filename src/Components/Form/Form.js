@@ -27,6 +27,7 @@ class Form extends React.Component {
       },
     })
     .then((res) => {
+      this.props.addError(false)
       this.props.addResponse(res.data);
     })
     .catch((error) => {
@@ -34,10 +35,6 @@ class Form extends React.Component {
       this.props.addError(true);
     });
     this.props.addResponseStatus(true);
-    
-    setTimeout(()=>{
-      window.scroll(0, window.innerHeight);
-    }, 100)
   };
 
   render() {

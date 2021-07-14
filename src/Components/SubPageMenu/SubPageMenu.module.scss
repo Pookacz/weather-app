@@ -1,12 +1,5 @@
 .wrapper{
     height: 100vh;
-    &Error{
-        @extend .wrapper;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 .buttonWrapper{
@@ -44,19 +37,4 @@
 }
 .pageOff:hover{
     font-weight: 700;
-}
-
-.errorButton{
-    background: none;
-    border: 0;
-    border-bottom: 2px solid #e74c3c;
-    padding: 15px;
-    outline: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-.errorButton:hover{
-    background-color: #e74c3c;
-    color: #fff;
 }

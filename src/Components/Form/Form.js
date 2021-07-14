@@ -40,17 +40,20 @@ class Form extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <input
-          className={styles.input}
-          name="city"
-          onChange={this.handleChange}
-          autoComplete="off"
-        />
-        <Button
-          className={styles.button}
-          onClick={this.searchWeather}
-          title="Search"
-        />
+        <h1 className={styles.title}>Weather App</h1>
+        <div className={styles.form}>
+          <input
+            className={styles.input}
+            name="city"
+            onChange={this.handleChange}
+            autoComplete='off'
+          />
+          <Button
+            className={styles.button}
+            onClick={this.searchWeather}
+            title="Search"
+          />
+        </div>
       </div>
     );
   }

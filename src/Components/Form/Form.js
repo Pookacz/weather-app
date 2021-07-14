@@ -17,6 +17,8 @@ class Form extends React.Component {
   };
 
   searchWeather = () => {
+    this.props.addError(false);
+    this.props.addResponseStatus(false);
     axios
       .request({
         method: "GET",
@@ -27,12 +29,11 @@ class Form extends React.Component {
         },
       })
       .then((res) => {
-        this.props.addError(false);
         this.props.addResponse(res.data);
       })
       .catch((error) => {
-        console.log(error);
         this.props.addError(true);
+        console.log(error);
       });
     this.props.addResponseStatus(true);
   };

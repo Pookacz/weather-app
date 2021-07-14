@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import styles from './CurrentWeather.module.scss';
+import styles from "./CurrentWeather.module.scss";
 
 const CurrentWeather = (props) => {
   return (
